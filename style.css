@@ -1,29 +1,65 @@
 body {
   font-family: "Georgia", serif;
-  background-color: #fdfcf8;
-  color: #333;
   margin: 0;
   padding: 0;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
 }
 
 header {
-  background-color: #8e8b82;
+  text-align: center;
   color: white;
   padding: 2em 1em;
+  background-color: #333;
+}
+
+nav {
+  background-color: #c4c0b6;
+  padding: 1em;
   text-align: center;
 }
 
-.content {
+nav a {
+  margin: 0 1em;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+main {
   flex: 1;
-  padding: 1.5em;
-  max-width: 900px;
-  margin: auto;
+  display: flex;
+  flex-direction: row;
+}
+
+main > section {
+  flex: 1;
+  padding: 2em;
+  color: #000;
   display: flex;
   flex-direction: column;
-  gap: 2em;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Colores bandera italiana */
+main > section:nth-child(1) {
+  background-color: #008C45; /* Verde */
+  color: white;
+}
+
+main > section:nth-child(2) {
+  background-color: #ffffff; /* Blanco */
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Coat_of_arms_of_Trieste.svg/400px-Coat_of_arms_of_Trieste.svg.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100px;
+}
+
+main > section:nth-child(3) {
+  background-color: #CD212A; /* Rojo */
+  color: white;
 }
 
 footer {
@@ -33,16 +69,11 @@ footer {
   font-size: 0.9em;
 }
 
-@media (max-width: 600px) {
-  header h1 {
-    font-size: 1.5em;
+@media (max-width: 768px) {
+  main {
+    flex-direction: column;
   }
-
-  .content {
-    padding: 1em;
-  }
-
-  section h2 {
-    font-size: 1.2em;
+  main > section {
+    min-height: 200px;
   }
 }
